@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{alco}}</ion-card-subtitle>
+      <ion-card-title>{{ing}}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <img src="image" alt="imag7777e">
+     <p>{{inst}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="fun()">fun</ion-button>
+  </ion-content>
