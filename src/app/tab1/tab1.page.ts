@@ -11,7 +11,7 @@ import { cocktaildata } from '../models/cocktaildata.model'
 export class Tab1Page implements OnInit{
   arr;
   image;
-  image1;
+  image1 = "https://www.thecocktaildb.com/images/media/drink/vqruyt1478963249.jpg"
   alco;
   ing;
   name;
@@ -35,16 +35,23 @@ export class Tab1Page implements OnInit{
       this.inst = this.ctDataObj.strInstructions;
       console.log(`${this.image}---${this.alco}---${this.ing}`)
       console.log(`${this.image}`)
+      this.reSubscribe();
       for(let i in this.ctDataObj){
         if(this.ctDataObj[i] != null )
         console.log(`----${i}-----${this.ctDataObj[i]}`)
       }
     }}
+
+    reSubscribe(){
+      this.apiServe.getApiData().subscribe(val=>{console.log(val);
+       this.cockTailData = val;
+      })
+    }
     
     
     ngOnInit(){
-        this.apiServe.getApiData().subscribe(val=>{console.log(val);
-         this.cockTailData = val;
-        })
+      this.apiServe.getApiData().subscribe(val=>{console.log(val);
+       this.cockTailData = val;
+      })
   }
 }
